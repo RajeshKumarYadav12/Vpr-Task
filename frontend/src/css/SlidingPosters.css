@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.poster-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(0deg, white, plum, white);
+}
+
+.poster-heading {
+    font-size: 4.5rem;
+    height: 30%;
+    display: flex;
+    padding-left: 2%;
+    padding-top: 5%;
+    /* background-image: linear-gradient(to right, orangered, #0c0202);  */
+    font-weight: bold;
+    animation: flicker-heading 3s linear infinite;
+    font-family:  'Poppins', 'Montserrat',sans-serif;
+}
+
+@keyframes flicker-heading {
+    from {
+        background-image: linear-gradient(to right, rgb(21, 108, 137), red);
+        background-clip: text;
+        color: transparent;
+    }
+
+    to {
+        background-image: linear-gradient(to left, orangered, #0c0202);
+        background-clip: text;
+        color: transparent;
+    }
+}
+
+.poster-wrapper {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.poster-marquee {
+    width: 100%;
+    height: 100%;
+    /* border:1px solid red; */
+    display: flex;
+    overflow-x: hidden;
+    /* so we dont see the images going outside the div*/
+    overflow-y: visible;
+    /* should be visible because if we hover over the img, it translates up by 5%. Won't be visible without this*/
+    align-items: flex-end;
+}
+
+@keyframes scrollX {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.marquee-group {
+    display: flex;
+    animation: scrollX 10s linear infinite;
+}
+
+.marquee-group-paused {
+    cursor: pointer;
+    animation-play-state: paused;
+}
+
+.poster-img {
+    max-height: 80%;
+    width: 37vh;
+    margin-right: 2vw;
+    border-radius: 15px;
+}
+
+.poster-img:hover {
+    /* transform: scale(1.05); */
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px black;
+    transform: translateY(-5%);
+}
+
+
+
+@media (max-width:720px) {
+    .poster-container{
+        height: 70vh;
+    }
+    .poster-img {
+        max-height: 75%;
+        max-width: 24vh;
+        margin-right: 2vw;
+        border-radius: 15px;
+    }
+    .poster-marquee{
+        align-items: flex-start;
+    }
+
+    .poster-heading{
+        font-size: min(15vw,3rem);
+        margin-right: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .poster-img:hover {
+        transform: translateY(5%);
+    }
+}

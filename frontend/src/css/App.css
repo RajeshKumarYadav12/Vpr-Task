@@ -1,0 +1,15 @@
+nav {
+    position: sticky; /* makes it stick */
+    top: 10px;         /* sticks to top of viewport */
+    z-index: 1000;     /* stays above other content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 3rem;
+    background: linear-gradient(to right, #6a11cb, rgb(34, 1, 91));
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 35px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    opacity: 0.9;
+  }
