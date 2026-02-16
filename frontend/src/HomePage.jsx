@@ -5,7 +5,7 @@ import "./css/HomePage.css";
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-  const navItems = ["Home", "About", "Services", "Portfolio", "Clients", "Contact"];
+  const navItems = ["Home", "About", "Services", "Portfolio", "Clients","Blog", "Contact"];
 
   
   return (
